@@ -1,8 +1,11 @@
-const express = require('express');
-const UserController = require('./controllers/UserController');
+const express = require('express')
+const SongsController = require('./controllers/SongsController')
+const UserController = require('./controllers/UserController')
 
-const routes = express.Router();
+const routes = express.Router()
 
-routes.post('/users', UserController.store);
+routes.post('/users', UserController.store)
+routes.post('/login', UserController.login)
+routes.post('/favoriteSongs', SongsController.save)
 
-module.exports = routes;
+module.exports = routes

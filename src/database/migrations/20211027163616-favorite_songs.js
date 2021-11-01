@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -16,7 +16,7 @@ module.exports = {
       user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'users', key: 'id' },
+        references: { model: 'users', key: 'user_id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
@@ -38,12 +38,10 @@ module.exports = {
         allowNull: false,
         defaultValue: Sequelize.fn('now'),
       },
-    });
-
+    })
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('favorite_songs');
-
-  }
-};
+    return queryInterface.dropTable('favorite_songs')
+  },
+}
