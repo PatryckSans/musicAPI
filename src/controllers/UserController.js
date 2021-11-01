@@ -15,9 +15,6 @@ module.exports = {
       where: { email, password },
     })
 
-    console.log(email, password)
-    console.log(user)
-
     if (user.toJSON()) {
       const token = jwt.sign({ id: user.toJSON().user_id }, process.env.SECRET, {
         expiresIn: 86400, // expires in 1day
