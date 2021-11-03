@@ -9,8 +9,6 @@ class FavoriteSongs extends Model {
         song_name: DataTypes.STRING,
         artist: DataTypes.STRING,
         album: DataTypes.STRING,
-        created_at: DataTypes.DATE,
-        updated_at: DataTypes.DATE,
       },
       {
         sequelize: connection,
