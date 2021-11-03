@@ -15,12 +15,12 @@ module.exports = {
       where: { email, password },
     })
 
-    if (user.toJSON()) {
+    if (user) {
       const token = jwt.sign({ id: user.toJSON().user_id }, process.env.SECRET, {
         expiresIn: 86400, // expires in 1day
       })
       return res.json({ auth: true, token: token })
     }
-    res.status(500).json({ message: 'Login inválido!' })
+    res.status(401).json({ message: 'Login inválido!' })
   },
 }
